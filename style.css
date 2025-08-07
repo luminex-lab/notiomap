@@ -1,0 +1,323 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('fondo.jpg'); /* Set fondo.jpg as the background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-attachment: scroll;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    box-sizing: border-box; /* Global box-sizing for easier responsive design */
+}
+
+
+/* FIX: Ensure fondo.jpg is always visible and covers the screen on mobile */
+
+@media (max-width: 480px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: center;
+        background-image: url('fondos.jpg');
+        
+    }
+
+    .container{
+        font-size: 100%;
+        
+    }
+
+    .logo-container {
+        width: 100%;
+        max-width: 250px;
+        overflow: hidden;
+        margin: 0;
+        height: 10em;
+    }
+}
+
+
+.logo-container {
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
+    margin: 0;
+    height: 10em;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto; /* Evita la distorsión manteniendo la proporción */
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Esto es lo que evita el desplazamiento */
+}
+
+.container {
+    padding: 20px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-direction: column; /* Apila el contenido verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+}
+
+.container, h1{
+    max-width: 800px;
+}
+
+.container, h2{
+    max-width: 700px;
+}
+
+.content{
+    max-width: 500px;
+}
+
+.content-section {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for showing/hiding */
+}
+
+.content-section.hidden {
+    display: none;
+    opacity: 0; /* For smooth fade-out effect */
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#tryNowButton {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    width: auto; /* Allow button to size naturally */
+    min-width: 200px; /* Ensure a decent minimum width for the button */
+    max-width: 100%; /* Ensure button doesn't overflow on small screens */
+    box-sizing: border-box;
+}
+
+#tryNowButton:hover {
+    background-color: #333;
+}
+
+/* Styles for the "Sé el primero en enterarte" section (Email (1).png) */
+.form-group {
+    margin-bottom: 15px; /* Space between the email input and discord button */
+    display: flex; /* Use flexbox to center content easily */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Styled Email Input Field to look exactly like the button in the image */
+.email-input-styled {
+    background-color: #000; /* Black background like the button */
+    color: #fff; /* White text color */
+    padding: 15px 20px;
+    border: none; /* No border */
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: text; /* KEEP cursor as text for input field */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block; /* Make it a block element to control width and margin */
+    width: 100%; /* Take full width of its parent .form-group */
+    max-width: 270px; /* Adjusted max-width to visually match Email (1).png better */
+    text-align: center; /* Center placeholder/text */
+    outline: none; /* Remove outline on focus */
+    box-sizing: border-box;
+}
+
+.email-input-styled::placeholder {
+    color: #fff; /* Placeholder color is white on the black background as per image */
+    opacity: 1; /* Ensure placeholder is not transparent */
+}
+
+.email-input-styled:focus {
+    background-color: #333; /* Darker on focus */
+}
+
+/* Styled Discord Button to match the image */
+.discord-button-styled {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Take full width of its parent .form-group */
+    max-width: 270px; /* Adjusted max-width to visually match Email (1).png better */
+    box-sizing: border-box;
+}
+
+.discord-button-styled:hover {
+    background-color: #333;
+}
+
+.discord-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    /* In the image, the Discord icon seems to be white. If the SVG is black, it might not show. */
+    /* If your SVG is not white by default, you might need to filter it: */
+    /* filter: brightness(0) invert(1); */
+}
+
+/* Specific styles for Email.png content on fondo.jpg */
+#section1 {
+    background-color: transparent; /* Transparent background for the first section */
+    box-shadow: none; /* No shadow */
+    padding: 0; /* No padding from content-section, allowing text to be closer to edges if needed */
+}
+
+#section1 h1, #section1 p {
+    color: #000; /* Adjust text color for better contrast with the background */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Add a slight text shadow for readability */
+}
+
+#section2{
+    display: inline-block; /* Allows width to be set and centers if parent is text-align: center */
+    min-width: 569px; /* Ensures a minimum width */
+    max-width: 100%; /* Prevents overflow on small screens */
+}
+
+#section2, h1{
+    margin-bottom: 1em;
+}
+
+.container2{
+    max-width: 900px;
+    width: 90%;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-section {
+        padding: 30px 40px; /* Reduce padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 2.2em; /* Smaller font size for H1 */
+    }
+
+    h2 {
+        font-size: 1.8em; /* Smaller font size for H2 */
+    }
+
+    p {
+        font-size: 1em; /* Smaller font size for paragraphs */
+    }
+
+    #tryNowButton,
+    .email-input-styled,
+    .discord-button-styled {
+        font-size: 1em; /* Smaller font size for elements */
+        padding: 12px 20px; /* Adjust padding */
+        min-width: unset; /* Remove min-width constraint on smaller screens */
+        max-width: 270px; /* Maintain consistent max-width for the input/button */
+    }
+}
+
+@media (max-width: 480px) {
+    .content-section {
+        padding: 20px 25px; /* Further reduce padding on very small screens */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Even smaller font size for H1 */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Even smaller font size for H2 */
+    }
+
+    p {
+        font-size: 0.9em; /* Even smaller font size for paragraphs */
+    }
+
+    #tryNowButton,
+    .email-input-styled,
+    .discord-button-styled {
+        width: 100%; /* Full width buttons/input on very small screens */
+        padding: 10px 15px; /* Further adjust padding */
+        max-width: none; /* Allow elements to take full width */
+    }
+
+    .form-group {
+        margin-bottom: 10px; /* Reduce gap between elements on smaller screens */
+    }
+}
+
+/* Style for buttons that should look like "Pruébalo Ya" */
+.btn-primary {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 15px 30px; /* Padding for height and width */
+    border: none; /* No border */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 1.2em; /* Font size relative to parent */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block; /* Allows width to be set and centers if parent is text-align: center */
+    min-width: 500px; /* Ensures a minimum width */
+    max-width: 100%; /* Prevents overflow on small screens */
+    box-sizing: border-box; /* Includes padding in width/height calculation */
+    text-align: center; /* Ensures text is centered within the button */
+    margin-bottom: 2em;
+}
+
+.btn-primary:hover {
+    background-color: #333; /* Darker grey on hover */
+}
